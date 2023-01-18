@@ -1,0 +1,18 @@
+.room-preview {
+  height: 20vmin;
+  pointer-events: none;
+}
+
+
+body {
+  background-color: #282c34;
+  color: white;
+}
+
+a {
+  color: #61dafb;
+}
+
+.travel-btn {
+  margin: 2px;
+}

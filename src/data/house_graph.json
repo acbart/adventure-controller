@@ -1,0 +1,755 @@
+{
+  "universal": {
+    "brother": "brother.jpg",
+    "father": "father.jpg",
+    "mother": "mother.jpg",
+    "sister": "sister.jpg"
+  },
+  "rooms": {
+    "archway": {
+      "items": [],
+      "name": "The Archway",
+      "id": 204,
+      "doors": ["tearoom", "emptybedroom"],
+      "warps": [],
+      "map": "archway-map.jpg"
+    },
+    "armory": {
+      "items": [],
+      "name": "The Armory",
+      "id": 112,
+      "doors": [],
+      "warps": ["storeroomofsorts", "sewingroom"],
+      "image": "armory-image.jpg",
+      "map": "armory-map.jpg"
+    },
+    "attic": {
+      "items": [
+        "remnant21"
+      ],
+      "name": "The Attic",
+      "id": 144,
+      "doors": ["diningroom"],
+      "warps": [],
+      "image": "attic-image.jpg",
+      "map": "attic-map.jpg"
+    },
+    "backrooms": {
+      "items": [
+        "remnant12",
+        "remnant17"
+      ],
+      "name": "The Backrooms (and Beyond)",
+      "id": 118,
+      "doors": ["greathall"],
+      "warps": [],
+      "image": "backrooms-image.jpg"
+    },
+    "ballroom": {
+      "items": [
+        "barman"
+      ],
+      "name": "The Ballroom",
+      "id": 212,
+      "doors": ["leeringones", "bedroom"],
+      "warps": [],
+      "image": "ballroom-image.jpg",
+      "map": "ballroom-map.jpg"
+    },
+    "bedroom": {
+      "items": [],
+      "name": "Bedroom with a Secret Passage",
+      "id": 216,
+      "doors": ["ballroom", "secretchapel", "dollroom"],
+      "warps": [],
+      "map": "bedroom-map.jpg",
+      "map2": "bedroom-map2.jpg"
+    },
+    "bluecorridor": {
+      "items": [],
+      "name": "The Blue Corridor",
+      "id": 236,
+      "doors": ["masterbedroom", "vestibule", "twistedroom", "privatestudy"],
+      "warps": [],
+      "image": "bluecorridor-image.jpg",
+      "map": "bluecorridor-map.jpg"
+    },
+    "boundlessroom": {
+      "items": [],
+      "name": "The Boundless Room",
+      "id": 86,
+      "doors": [],
+      "warps": ["emptyroom"],
+      "image": "boundlessroom-image.jpg",
+      "image2": "boundlessroom-image2.jpg",
+      "map": "boundlessroom-map.jpg"
+    },
+    "catmenagerie": {
+      "items": [],
+      "name": "The Cat Menagerie",
+      "id": 198,
+      "doors": ["dollroom", "leeringones"],
+      "warps": [],
+      "image": "catmenagerie-image.jpg",
+      "map": "catmenagerie-map.jpg"
+    },
+    "cell": {
+      "items": [],
+      "name": "The Cell",
+      "id": 124,
+      "doors": ["guardian"],
+      "warps": [],
+      "map": "cell-map.jpg"
+    },
+    "cellar": {
+      "items": [
+        "doorman"
+      ],
+      "name": "The Cellar",
+      "id": 104,
+      "doors": ["interiorcourtyard"],
+      "warps": [],
+      "map": "cellar-map.jpg"
+    },
+    "childshallway": {
+      "items": [],
+      "name": "Child's Hallway",
+      "id": 178,
+      "doors": ["studio", "nursery", "dog", "ravendream", "familiarroomfrater"],
+      "warps": [],
+      "map": "childshallway-map.jpg"
+    },
+    "diningroom": {
+      "items": [
+        "mirror",
+        "remnant19"
+      ],
+      "name": "The Dining Room",
+      "id": 136,
+      "doors": ["kitchen", "sittingroom", "winecellar", "attic"],
+      "warps": [],
+      "image": "diningroom-image.jpg",
+      "map": "diningroom-map.jpg",
+      "map2": "diningroom-map2.jpg"
+    },
+    "dog": {
+      "items": [],
+      "name": "The Dog",
+      "id": 186,
+      "doors": ["childshallway", "secretchapel"],
+      "warps": [],
+      "map": "dog-map.jpg",
+      "map2": "dog-map2.jpg"
+    },
+    "dollroom": {
+      "items": [
+        "remnant10"
+      ],
+      "name": "The Doll Room",
+      "id": 196,
+      "doors": ["walledgarden", "catmenagerie", "bedroom", "secretchapel"],
+      "warps": [],
+      "image": "dollroom-image.jpg",
+      "map": "dollroom-map.jpg"
+    },
+    "drippingroom": {
+      "items": [
+        "remnant20",
+        "womanofwax"
+      ],
+      "name": "The Dripping Room",
+      "id": 156,
+      "doors": ["grandstaircase"],
+      "warps": [],
+      "map": "drippingroom-map.jpg"
+    },
+    "droninghall": {
+      "items": [],
+      "name": "Droning Hall",
+      "id": 168,
+      "doors": ["tree", "longcorridor"],
+      "warps": [],
+      "map": "droninghall-map.jpg"
+    },
+    "elevator": {
+      "items": [],
+      "name": "The Elevator",
+      "id": 89,
+      "doors": [],
+      "warps": ["emptyroom", "musicroom", "guardian", "backrooms", "greathall", "mannequinroom"],
+      "image": "elevator-image.jpg"
+    },
+    "emptybedroom": {
+      "items": [],
+      "name": "Empty Bedroom",
+      "id": 206,
+      "doors": ["archway", "musicroom"],
+      "warps": [],
+      "image": "emptybedroom-image.jpg",
+      "map": "emptybedroom-map.jpg"
+    },
+    "emptyroom": {
+      "items": [
+        "remnant9"
+      ],
+      "name": "Room with a Hidden Elevator",
+      "id": 88,
+      "doors": ["greathall", "storeroomofsorts", "gallery", "library"],
+      "warps": [],
+      "map": "emptyroom-map.jpg",
+      "map2": "emptyroom-map2.jpg"
+    },
+    "familiarroomamator": {
+        "items": [],
+        "name": "The Familiar Room (Amator)",
+        "id": 254,
+        "doors": ["timeloop", "twistedroom"],
+        "warps": []
+    },
+    "familiarroomfrater": {
+        "items": [],
+        "name": "The Familiar Room (Frater)",
+        "id": 184,
+        "doors": ["longcorridor", "childshallway"],
+        "warps": []
+    },
+    "familiarroompater": {
+        "items": [],
+        "name": "The Familiar Room (Pater)",
+        "id": 94,
+        "doors": ["library", "lyinginstate"],
+        "warps": []
+    },
+    "fountainofpain": {
+      "items": [
+        "facelessthing"
+      ],
+      "name": "The Fountain of Pain",
+      "id": 258,
+      "doors": ["hallsofthepained"],
+      "warps": [],
+      "image": "fountainofpain-image.jpg",
+      "map": "fountainofpain-map.jpg"
+    },
+    "foyer": {
+      "items": [
+        "remnant29"
+      ],
+      "name": "Foyer",
+      "id": 162,
+      "doors": ["walledgarden", "longcorridor"],
+      "warps": [],
+      "map": "foyer-map.jpg"
+    },
+    "gallery": {
+      "items": [
+        "curator",
+        "paintingofmanandinfant",
+        "paintingofmanonhorse",
+        "paintingofoldwomananddog",
+        "paintingofpyramidandshrike",
+        "paintingofthesmilingman",
+        "paintingofwomanwitheightspiderlikearms"
+      ],
+      "name": "Gallery",
+      "id": 106,
+      "doors": ["interiorcourtyard", "emptyroom"],
+      "warps": [],
+      "map": "gallery-map.jpg"
+    },
+    "gatekeeper": {
+      "items": [
+        "gatekeeper"
+      ],
+      "name": "The Gatekeeper",
+      "id": 224,
+      "doors": ["musicroom"],
+      "warps": [],
+      "image": "gatekeeper-image.jpg",
+      "map": "gatekeeper-map.jpg"
+    },
+    "grandstaircase": {
+      "items": [],
+      "name": "The Grand Staircase",
+      "id": 128,
+      "doors": ["wheelofblood", "parlor", "greathall", "drippingroom"],
+      "warps": [],
+      "image": "grandstaircase-image.jpg",
+      "map": "grandstaircase-map.jpg"
+    },
+    "greathall": {
+      "items": [
+        "host",
+        "remnant5"
+      ],
+      "name": "Great Hall",
+      "id": 114,
+      "doors": ["musicroom", "backrooms", "guardian", "grandstaircase", "mannequinroom", "emptyroom"],
+      "warps": [],
+      "image": "greathall-image.jpg",
+      "map": "greathall-map.jpg"
+    },
+    "greenhouse": {
+      "items": [],
+      "name": "The Greenhouse",
+      "id": 148,
+      "doors": ["narrowstaircase"],
+      "warps": [],
+      "image": "greenhouse-image.jpg",
+      "map": "greenhouse-map.jpg"
+    },
+    "guardian": {
+      "items": [],
+      "name": "The Guardian",
+      "id": 122,
+      "doors": ["cell", "greathall"],
+      "warps": [],
+      "image": "guardian-image.jpg",
+      "map": "guardian-map.jpg"
+    },
+    "hallsofthepained": {
+      "items": [
+        "thepained"
+      ],
+      "name": "Halls of the Pained",
+      "id": 260,
+      "doors": ["redroom", "fountainofpain"],
+      "warps": [],
+      "image": "hallsofthepained-image.jpg",
+      "map": "hallsofthepained-map.jpg"
+    },
+    "interiorcourtyard": {
+      "items": [],
+      "name": "The Interior Courtyard",
+      "id": 102,
+      "doors": ["gallery", "shadowyhallway", "cellar"],
+      "warps": [],
+      "image": "interiorcourtyard-image.jpg",
+      "map": "interiorcourtyard-map.jpg"
+    },
+    "kitchen": {
+      "items": [],
+      "name": "The Kitchen",
+      "id": 134,
+      "doors": ["sewingroom", "storeroom", "diningroom", "parlor"],
+      "warps": [],
+      "image": "kitchen-image.jpg",
+      "map": "kitchen-map.jpg"
+    },
+    "leeringones": {
+      "items": [],
+      "name": "The Leering Ones",
+      "id": 200,
+      "doors": ["tearoom", "ballroom", "shoin", "catmenagerie"],
+      "warps": [],
+      "image": "leeringones-image.jpg",
+      "map": "leeringones-map.jpg"
+    },
+    "library": {
+      "items": [
+        "remnant4"
+      ],
+      "name": "The Library",
+      "id": 90,
+      "doors": ["shadowyhallway", "trophyroom", "familiarroompater", "emptyroom"],
+      "warps": [],
+      "image": "library-image.jpg",
+      "map": "library-map.jpg",
+      "map2": "library-map2.jpg"
+    },
+    "lightlesshall": {
+      "items": [],
+      "name": "Lightless Hall",
+      "id": 84,
+      "doors": ["livingroom", "boundlessroom"],
+      "warps": [],
+      "map": "lightlesshall-map.jpg"
+    },
+    "livingroom": {
+      "items": [
+        "remnant1",
+        "remnant30"
+      ],
+      "name": "The Living Room",
+      "id": 82,
+      "doors": ["lightlesshall"],
+      "warps": [],
+      "image": "livingroom-image.jpg",
+      "map": "livingroom-map.jpg"
+    },
+    "longcorridor": {
+      "items": [
+        "remnant16"
+      ],
+      "name": "Long Corridor",
+      "id": 164,
+      "doors": ["secretroom", "droninghall", "ravendream", "familiarroomfrater", "foyer"],
+      "warps": [],
+      "image": "longcorridor-image.jpg",
+      "map": "longcorridor-map.jpg",
+      "map2": "longcorridor-map2.jpg"
+    },
+    "lyinginstate": {
+      "items": [
+        "clockworkchild",
+        "remnant3"
+      ],
+      "name": "Lying in State",
+      "id": 96,
+      "doors": ["trophyroom", "familiarroompater"],
+      "warps": [],
+      "image": "lyinginstate-image.jpg",
+      "map": "lyinginstate-map.jpg"
+    },
+    "mannequinroom": {
+      "items": [],
+      "name": "The Mannequin Room",
+      "id": 154,
+      "doors": ["sewingroom", "greathall"],
+      "warps": [],
+      "image": "mannequinroom-image.jpg",
+      "map": "mannequinroom-map.jpg"
+    },
+    "masterbedroom": {
+      "items": [
+        "remnant22"
+      ],
+      "name": "Master Bedroom",
+      "id": 238,
+      "doors": ["psychomanteum", "bluecorridor"],
+      "warps": [],
+      "image": "masterbedroom-image.jpg",
+      "map": "masterbedroom-map.jpg"
+    },
+    "meditationroom": {
+      "items": [
+        "remnant23"
+      ],
+      "name": "Meditation Room",
+      "id": 234,
+      "doors": ["privatestudy"],
+      "warps": [],
+      "image": "meditationroom-image.jpg",
+      "map": "meditationroom-map.jpg"
+    },
+    "musicroom": {
+      "items": [
+        "remnant18"
+      ],
+      "name": "The Music Room",
+      "id": 222,
+      "doors": ["shoin", "greathall", "emptybedroom", "gatekeeper"],
+      "warps": [],
+      "image": "musicroom-image.jpg",
+      "map": "musicroom-map.jpg"
+    },
+    "narrowstaircase": {
+      "items": [],
+      "name": "The Narrow Staircase",
+      "id": 146,
+      "doors": ["greenhouse", "parlor"],
+      "warps": [],
+      "map": "narrowstaircase-map.jpg"
+    },
+    "nursery": {
+      "items": [
+        "monstrousinfant",
+        "remnant11"
+      ],
+      "name": "The Nursery",
+      "id": 188,
+      "doors": ["childshallway"],
+      "warps": [],
+      "image": "nursery-image.jpg",
+      "image2": "nursery-image2.jpg",
+      "map": "nursery-map.jpg"
+    },
+    "originalhouse": {
+      "items": [
+        "dollhouse",
+        "structure",
+        "theantimony"
+      ],
+      "name": "The Original House",
+      "id": 268,
+      "doors": [],
+      "warps": []
+    },
+    "parlor": {
+      "items": [
+        "remnant13",
+        "thearbiter"
+      ],
+      "name": "Parlor",
+      "id": 130,
+      "doors": ["narrowstaircase", "kitchen", "sittingroom", "grandstaircase"],
+      "warps": [],
+      "image": "parlor-image.jpg",
+      "map": "parlor-map.jpg"
+    },
+    "prisoner": {
+      "items": [
+        "cenotaph",
+        "remnant25"
+      ],
+      "name": "The Prisoner",
+      "id": 250,
+      "doors": ["timeloop"],
+      "warps": [],
+      "image": "prisoner-image.jpg",
+      "map": "prisoner-map.jpg"
+    },
+    "privatestudy": {
+      "items": [
+        "phillipsdiagram",
+        "remnant24",
+        "remnant26"
+      ],
+      "name": "Private Study",
+      "id": 230,
+      "doors": ["bluecorridor", "meditationroom"],
+      "warps": [],
+      "image": "privatestudy-image.jpg",
+      "map": "privatestudy-map.jpg"
+    },
+    "psychomanteum": {
+      "items": [],
+      "name": "Psychomanteum",
+      "id": 240,
+      "doors": ["masterbedroom"],
+      "warps": [],
+      "image": "psychomanteum-image.jpg",
+      "map": "psychomanteum-map.jpg"
+    },
+    "ravendream": {
+      "items": [
+        "ravendream",
+        "remnant7"
+      ],
+      "name": "The Ravendream",
+      "id": 174,
+      "doors": ["childshallway", "longcorridor"],
+      "warps": [],
+      "image": "ravendream-image.jpg",
+      "map": "ravendream-map.jpg"
+    },
+    "redroom": {
+      "items": [
+        "redfigure"
+      ],
+      "name": "The Red Room",
+      "id": 262,
+      "doors": ["hallsofthepained"],
+      "warps": ["livingroom"],
+      "image": "redroom-image.jpg",
+      "map": "redroom-map.jpg"
+    },
+    "secretchapel": {
+      "items": [
+        "remnant14"
+      ],
+      "name": "The Secret Chapel",
+      "id": 218,
+      "doors": ["bedroom", "dollroom", "dog"],
+      "warps": [],
+      "image": "secretchapel-image.jpg",
+      "map": "secretchapel-map.jpg",
+      "map2": "secretchapel-map2.jpg"
+    },
+    "secretroom": {
+      "items": [
+        "remnant15",
+        "remnant6"
+      ],
+      "name": "Secret Room",
+      "id": 166,
+      "doors": ["longcorridor"],
+      "warps": [],
+      "image": "secretroom-image.jpg",
+      "image2": "secretroom-image2.jpg",
+      "map": "secretroom-map.jpg"
+    },
+    "sewingroom": {
+      "items": [],
+      "name": "The Sewing Room",
+      "id": 150,
+      "doors": ["kitchen", "storeroom", "mannequinroom"],
+      "warps": ["armory"],
+      "image": "sewingroom-image.jpg",
+      "map": "sewingroom-map.jpg"
+    },
+    "shadowyhallway": {
+      "items": [],
+      "name": "Shadowy Hallway",
+      "id": 100,
+      "doors": ["interiorcourtyard", "library"],
+      "warps": [],
+      "map": "shadowyhallway-map.jpg"
+    },
+    "shoin": {
+      "items": [
+        "corpsewoman",
+        "remnant8"
+      ],
+      "name": "The Shoin",
+      "id": 208,
+      "doors": ["musicroom", "leeringones"],
+      "warps": [],
+      "image": "shoin-image.jpg",
+      "map": "shoin-map.jpg"
+    },
+    "sittingroom": {
+      "items": [
+        "familyportrait",
+        "familyportrait2"
+      ],
+      "name": "The Sitting Room",
+      "id": 140,
+      "doors": ["diningroom", "parlor"],
+      "warps": [],
+      "image": "sittingroom-image.jpg",
+      "map": "sittingroom-map.jpg"
+    },
+    "spiritofdestruction": {
+      "items": [],
+      "name": "The Spirit of Destruction",
+      "id": 172,
+      "doors": ["tree", "wheelofblood"],
+      "warps": [],
+      "image": "spiritofdestruction-image.jpg",
+      "map": "spiritofdestruction-map.jpg"
+    },
+    "storeroom": {
+      "items": [
+        "smilingman"
+      ],
+      "name": "The Storeroom",
+      "id": 152,
+      "doors": ["sewingroom", "kitchen"],
+      "warps": [],
+      "map": "storeroom-map.jpg"
+    },
+    "storeroomofsorts": {
+      "items": [
+        "remnant2"
+      ],
+      "name": "A Store Room of Sorts",
+      "id": 110,
+      "doors": ["emptyroom"],
+      "warps": ["armory"],
+      "image": "storeroomofsorts-image.jpg",
+      "map": "storeroomofsorts-map.jpg"
+    },
+    "studio": {
+      "items": [
+        "sacredtreeofthewolf",
+        "tomorrowsgirlsscratchedaway"
+      ],
+      "name": "The Studio",
+      "id": 180,
+      "doors": ["childshallway"],
+      "warps": [],
+      "image": "studio-image.jpg",
+      "map": "studio-map.jpg"
+    },
+    "summoningchamber": {
+      "items": [],
+      "name": "Summoning Chamber",
+      "id": 256,
+      "doors": ["timeloop"],
+      "warps": [],
+      "image": "summoningchamber-image.jpg",
+      "map": "summoningchamber-map.jpg"
+    },
+    "tearoom": {
+      "items": [],
+      "name": "The Tea Room",
+      "id": 202,
+      "doors": ["leeringones", "archway"],
+      "warps": [],
+      "image": "tearoom-image.jpg",
+      "map": "tearoom-map.jpg"
+    },
+    "timeloop": {
+      "items": [],
+      "name": "Time Loop",
+      "id": 248,
+      "doors": ["summoningchamber", "vestibule", "prisoner", "familiarroomamator"],
+      "warps": [],
+      "image": "timeloop-image.jpg",
+      "map": "timeloop-map.jpg"
+    },
+    "tree": {
+      "items": [],
+      "name": "The Tree",
+      "id": 170,
+      "doors": ["spiritofdestruction", "droninghall"],
+      "warps": [],
+      "image": "tree-image.jpg",
+      "map": "tree-map.jpg"
+    },
+    "trophyroom": {
+      "items": [],
+      "name": "The Trophy Room",
+      "id": 98,
+      "doors": ["lyinginstate", "library"],
+      "warps": [],
+      "image": "trophyroom-image.jpg",
+      "map": "trophyroom-map.jpg"
+    },
+    "twistedroom": {
+      "items": [
+        "burrowers"
+      ],
+      "name": "The Twisted Room",
+      "id": 242,
+      "doors": ["bluecorridor", "familiarroomamator"],
+      "warps": [],
+      "image": "twistedroom-image.jpg",
+      "map": "twistedroom-map.jpg"
+    },
+    "vestibule": {
+      "items": [
+        "remnant27",
+        "remnant28"
+      ],
+      "name": "The Vestibule",
+      "id": 244,
+      "doors": ["timeloop", "bluecorridor"],
+      "warps": ["originalhouse"],
+      "image": "vestibule-image.jpg",
+      "map": "vestibule-map.jpg"
+    },
+    "walledgarden": {
+      "items": [],
+      "name": "The Walled Garden",
+      "id": 194,
+      "doors": ["foyer", "dollroom"],
+      "warps": [],
+      "image": "walledgarden-image.jpg",
+      "map": "walledgarden-map.jpg"
+    },
+    "wheelofblood": {
+      "items": [
+        "paintingofhungrywolves",
+        "paintingofwolfattack",
+        "paintingofwolfpackchase",
+        "paintingofwolveslonggone"
+      ],
+      "name": "The Wheel of Blood",
+      "id": 158,
+      "doors": ["grandstaircase", "spiritofdestruction"],
+      "warps": [],
+      "map": "wheelofblood-map.jpg"
+    },
+    "winecellar": {
+      "items": [],
+      "name": "Wine Cellar",
+      "id": 142,
+      "doors": ["diningroom"],
+      "warps": [],
+      "image": "winecellar-image.jpg",
+      "map": "winecellar-map.jpg"
+    }
+  }
+}
