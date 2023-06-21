@@ -7,6 +7,8 @@ import { determineBestModeAvailable, ViewModeSetter } from "./ViewModeSetter";
 import { TravelButton } from "./TravelButton";
 import { ItemButton } from "./ItemButton";
 
+const PUBLIC_FILE_URL = "https://liveapp213.thedarkesthouse.com/public_files/";
+
 export function RoomPreview({
   roomKey,
   title,
@@ -19,7 +21,9 @@ export function RoomPreview({
   itemStack,
   mode,
   setMode,
-  imageRef
+  imageRef,
+  visit,
+  visited
 }: {
   roomKey: string;
   title: string;
@@ -33,6 +37,8 @@ export function RoomPreview({
   mode: ViewMode;
   setMode: (m: ViewMode) => void;
   imageRef?: React.MutableRefObject<HTMLImageElement | null>
+  visit: (room: string, visited: boolean) => void
+  visited: boolean
 }): JSX.Element {
   function jumpToRoom(evt: ChangeEvent<HTMLSelectElement>) {
     const room = evt.target.value;
@@ -45,13 +51,22 @@ export function RoomPreview({
     <div>
       <h1
         ref={imageRef !== undefined ? imageRef : null}>{title}</h1>
-      <img
-        src={`house_images/${room[shownMode]}`}
-        className="room-preview"
-        alt={title + " preview"}
-      />
+        {
+          room[shownMode] && room[shownMode].endsWith(".mp4") ?
+            <video src={`house_images/${room[shownMode]}`}
+            className="room-preview"></video> :
+            <img
+              src={`house_images/${room[shownMode]}`}
+              className="room-preview"
+              alt={title + " preview"}
+            />
+        }
       <div>
-        Page: {room.id} (<code>{roomKey}</code>)
+        Page {room.id} (<code>{roomKey}</code>):
+        <Button
+          variant={visited ? "success" : "outline-light"}
+          onClick={()=>visit(roomKey, !visited)}
+        >{visited ? "Visited" : "Mark Visited"}</Button>
       </div>
       <ViewModeSetter
         title={title}
@@ -70,6 +85,19 @@ export function RoomPreview({
                 showItem={showItem}
                 closeItem={closeItem}
               ></ItemButton>
+            ))}
+        </div>
+      )}
+      {room.sounds && room.sounds.length > 0 && (
+        <div>
+          Sounds:<br></br>
+            {room.sounds.map((song: string) => (
+              <audio
+                key={song}
+                controls
+              ><source
+                src={song.startsWith("http") ? song : PUBLIC_FILE_URL + song} type="audio/wav">
+              </source></audio>
             ))}
         </div>
       )}
@@ -165,6 +193,22 @@ export function RoomPreview({
             );
           })}
         </ol>
+        { roomKey === "backrooms" &&
+          <div>
+            Backrooms:<br></br>
+            {["01","02","03","04","05","06","07","08","09","10",
+              "11", "12", "13", "14", "15", "16", "17", "18", "19",
+            "20", "21", "22", "23", "24", "25", "26", "27", "28",
+          "29", "30"].map((backroom: string) => (
+              <ItemButton
+                key={backroom}
+                item={"backrooms-0"+backroom}
+                itemStack={itemStack}
+                showItem={showItem}
+                closeItem={closeItem}
+              ></ItemButton>
+            ))}
+          </div>}
       </div>
     </div>
   );

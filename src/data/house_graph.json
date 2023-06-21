@@ -3,15 +3,105 @@
     "brother": "brother.jpg",
     "father": "father.jpg",
     "mother": "mother.jpg",
-    "sister": "sister.jpg"
+    "sister": "sister.jpg",
+    "lacuna": "lacuna.mp4"
+  },
+  "regions": {
+    "amator": {
+      "name": "Amator (Lover)",
+      "color": "red",
+      "tags": ["amator"]
+    },
+    "frater": {
+      "name": "Frater (Brother)",
+      "color": "green",
+      "tags": ["frater"]
+    },
+    "pater": {
+      "name": "Pater (Father)",
+      "color": "purple",
+      "tags": ["pater"]
+    },
+    "mater": {
+      "name": "Mater (Mother)",
+      "color": "yellow",
+      "tags": ["mater"]
+    },
+    "soror": {
+      "name": "Soror (Sister)",
+      "color": "lightblue",
+      "tags": ["soror"]
+    },
+    "null": {
+      "name": "Global",
+      "color": "white",
+      "tags": []
+    },
+    "original": {
+      "name": "Original",
+      "color": "black",
+      "tags": ["original"]
+    }
   },
   "rooms": {
+    "original-foyer": {
+      "items": [ "theantimony" ],
+      "name": "The Original House Foyer",
+      "image": "original-foyer-2.jpg",
+      "id": 501,
+      "region": "original",
+      "doors": ["original-kitchen"],
+      "warps": []
+    },
+    "original-kitchen": {
+      "items": [ "theantimony" ],
+      "name": "The Original House Kitchen",
+      "image": "original-kitchen-2.jpg",
+      "id": 502,
+      "region": "original",
+      "doors": ["original-foyer", "original-dining"],
+      "warps": []
+    },
+    "original-dining": {
+      "items": [ "theantimony", "lacuna.mp4" ],
+      "name": "The Original House Dining Room",
+      "image": "original-dining-room-2.mp4",
+      "id": 503,
+      "region": "original",
+      "doors": ["original-kitchen", "original-stairs"],
+      "warps": []
+    },
+    "original-stairs": {
+      "items": [ "theantimony" ],
+      "name": "The Original House Stairs",
+      "image": "original-stairs-2.jpg",
+      "id": 504,
+      "region": "original",
+      "doors": ["original-dining", "original-attic"],
+      "warps": []
+    },
+    "original-attic": {
+      "items": [
+        "dollhouse",
+        "structure",
+        "theantimony"
+      ],
+      "name": "The Original House Attic",
+      "image": "original-attic.jpg",
+      "id": 505,
+      "region": "original",
+      "doors": ["original-stairs"],
+      "warps": []
+    },
+
+
     "archway": {
       "items": [],
       "name": "The Archway",
       "id": 204,
-      "doors": ["tearoom", "emptybedroom"],
+      "doors": ["bedroom", "secretchapel"],
       "warps": [],
+      "region": "soror",
       "map": "archway-map.jpg"
     },
     "armory": {
@@ -19,6 +109,7 @@
       "name": "The Armory",
       "id": 112,
       "doors": [],
+      "region": "pater",
       "warps": ["storeroomofsorts", "sewingroom"],
       "image": "armory-image.jpg",
       "map": "armory-map.jpg"
@@ -31,6 +122,7 @@
       "id": 144,
       "doors": ["diningroom"],
       "warps": [],
+      "region": "mater",
       "image": "attic-image.jpg",
       "map": "attic-map.jpg"
     },
@@ -43,6 +135,7 @@
       "id": 118,
       "doors": ["greathall"],
       "warps": [],
+      "region": "pater",
       "image": "backrooms-image.jpg"
     },
     "ballroom": {
@@ -53,6 +146,7 @@
       "id": 212,
       "doors": ["leeringones", "bedroom"],
       "warps": [],
+      "region": "soror",
       "image": "ballroom-image.jpg",
       "map": "ballroom-map.jpg"
     },
@@ -60,8 +154,9 @@
       "items": [],
       "name": "Bedroom with a Secret Passage",
       "id": 216,
-      "doors": ["ballroom", "secretchapel", "dollroom"],
+      "doors": ["ballroom", "archway", "dollroom"],
       "warps": [],
+      "region": "soror",
       "map": "bedroom-map.jpg",
       "map2": "bedroom-map2.jpg"
     },
@@ -71,6 +166,7 @@
       "id": 236,
       "doors": ["masterbedroom", "vestibule", "twistedroom", "privatestudy"],
       "warps": [],
+      "region": "amator",
       "image": "bluecorridor-image.jpg",
       "map": "bluecorridor-map.jpg"
     },
@@ -80,6 +176,7 @@
       "id": 86,
       "doors": [],
       "warps": ["emptyroom"],
+      "region": "pater",
       "image": "boundlessroom-image.jpg",
       "image2": "boundlessroom-image2.jpg",
       "map": "boundlessroom-map.jpg"
@@ -87,7 +184,9 @@
     "catmenagerie": {
       "items": [],
       "name": "The Cat Menagerie",
+      "sounds": ["soror-sound-musicfromadistance.mp3"],
       "id": 198,
+      "region": "soror",
       "doors": ["dollroom", "leeringones"],
       "warps": [],
       "image": "catmenagerie-image.jpg",
@@ -99,6 +198,7 @@
       "id": 124,
       "doors": ["guardian"],
       "warps": [],
+      "region": "pater",
       "map": "cell-map.jpg"
     },
     "cellar": {
@@ -109,6 +209,7 @@
       "id": 104,
       "doors": ["interiorcourtyard"],
       "warps": [],
+      "region": "pater",
       "map": "cellar-map.jpg"
     },
     "childshallway": {
@@ -117,6 +218,7 @@
       "id": 178,
       "doors": ["studio", "nursery", "dog", "ravendream", "familiarroomfrater"],
       "warps": [],
+      "region": "frater",
       "map": "childshallway-map.jpg"
     },
     "diningroom": {
@@ -124,10 +226,12 @@
         "mirror",
         "remnant19"
       ],
+      "sounds": ["mater-sound-ringingfromadistance.mp3"],
       "name": "The Dining Room",
       "id": 136,
       "doors": ["kitchen", "sittingroom", "winecellar", "attic"],
       "warps": [],
+      "region": "mater",
       "image": "diningroom-image.jpg",
       "map": "diningroom-map.jpg",
       "map2": "diningroom-map2.jpg"
@@ -138,6 +242,7 @@
       "id": 186,
       "doors": ["childshallway", "secretchapel"],
       "warps": [],
+      "region": "frater",
       "map": "dog-map.jpg",
       "map2": "dog-map2.jpg"
     },
@@ -149,8 +254,18 @@
       "id": 196,
       "doors": ["walledgarden", "catmenagerie", "bedroom", "secretchapel"],
       "warps": [],
+      "region": "soror",
       "image": "dollroom-image.jpg",
       "map": "dollroom-map.jpg"
+    },
+    "dressroom": {
+      "items": [],
+      "name": "The Dress Room",
+      "id": 500,
+      "doors": ["grandstaircase"],
+      "warps": [],
+      "region": "mater",
+      "image": "dressroom-image.jpg"
     },
     "drippingroom": {
       "items": [
@@ -161,6 +276,7 @@
       "id": 156,
       "doors": ["grandstaircase"],
       "warps": [],
+      "region": "mater",
       "map": "drippingroom-map.jpg"
     },
     "droninghall": {
@@ -169,6 +285,7 @@
       "id": 168,
       "doors": ["tree", "longcorridor"],
       "warps": [],
+      "region": "frater",
       "map": "droninghall-map.jpg"
     },
     "elevator": {
@@ -176,6 +293,7 @@
       "name": "The Elevator",
       "id": 89,
       "doors": [],
+      "region": "null",
       "warps": ["emptyroom", "musicroom", "guardian", "backrooms", "greathall", "mannequinroom"],
       "image": "elevator-image.jpg"
     },
@@ -185,6 +303,7 @@
       "id": 206,
       "doors": ["archway", "musicroom"],
       "warps": [],
+      "region": "soror",
       "image": "emptybedroom-image.jpg",
       "map": "emptybedroom-map.jpg"
     },
@@ -196,6 +315,7 @@
       "id": 88,
       "doors": ["greathall", "storeroomofsorts", "gallery", "library"],
       "warps": [],
+      "region": "pater",
       "map": "emptyroom-map.jpg",
       "map2": "emptyroom-map2.jpg"
     },
@@ -203,6 +323,7 @@
         "items": [],
         "name": "The Familiar Room (Amator)",
         "id": 254,
+        "region": "amator",
         "doors": ["timeloop", "twistedroom"],
         "warps": []
     },
@@ -210,6 +331,7 @@
         "items": [],
         "name": "The Familiar Room (Frater)",
         "id": 184,
+        "region": "frater",
         "doors": ["longcorridor", "childshallway"],
         "warps": []
     },
@@ -217,6 +339,7 @@
         "items": [],
         "name": "The Familiar Room (Pater)",
         "id": 94,
+        "region": "pater",
         "doors": ["library", "lyinginstate"],
         "warps": []
     },
@@ -228,6 +351,7 @@
       "id": 258,
       "doors": ["hallsofthepained"],
       "warps": [],
+      "region": "amator",
       "image": "fountainofpain-image.jpg",
       "map": "fountainofpain-map.jpg"
     },
@@ -239,6 +363,7 @@
       "id": 162,
       "doors": ["walledgarden", "longcorridor"],
       "warps": [],
+      "region": "frater",
       "map": "foyer-map.jpg"
     },
     "gallery": {
@@ -255,6 +380,7 @@
       "id": 106,
       "doors": ["interiorcourtyard", "emptyroom"],
       "warps": [],
+      "region": "pater",
       "map": "gallery-map.jpg"
     },
     "gatekeeper": {
@@ -265,15 +391,18 @@
       "id": 224,
       "doors": ["musicroom"],
       "warps": [],
+      "region": "soror",
       "image": "gatekeeper-image.jpg",
       "map": "gatekeeper-map.jpg"
     },
     "grandstaircase": {
       "items": [],
+      "sounds": ["mater-sound-ringingfromadistance.mp3"],
       "name": "The Grand Staircase",
       "id": 128,
-      "doors": ["wheelofblood", "parlor", "greathall", "drippingroom"],
+      "doors": ["wheelofblood", "parlor", "greathall", "drippingroom", "dressroom"],
       "warps": [],
+      "region": "mater",
       "image": "grandstaircase-image.jpg",
       "map": "grandstaircase-map.jpg"
     },
@@ -286,6 +415,7 @@
       "id": 114,
       "doors": ["musicroom", "backrooms", "guardian", "grandstaircase", "mannequinroom", "emptyroom"],
       "warps": [],
+      "region": "pater",
       "image": "greathall-image.jpg",
       "map": "greathall-map.jpg"
     },
@@ -295,6 +425,7 @@
       "id": 148,
       "doors": ["narrowstaircase"],
       "warps": [],
+      "region": "mater",
       "image": "greenhouse-image.jpg",
       "map": "greenhouse-map.jpg"
     },
@@ -304,6 +435,7 @@
       "id": 122,
       "doors": ["cell", "greathall"],
       "warps": [],
+      "region": "pater",
       "image": "guardian-image.jpg",
       "map": "guardian-map.jpg"
     },
@@ -315,6 +447,7 @@
       "id": 260,
       "doors": ["redroom", "fountainofpain"],
       "warps": [],
+      "region": "amator",
       "image": "hallsofthepained-image.jpg",
       "map": "hallsofthepained-map.jpg"
     },
@@ -324,15 +457,18 @@
       "id": 102,
       "doors": ["gallery", "shadowyhallway", "cellar"],
       "warps": [],
+      "region": "pater",
       "image": "interiorcourtyard-image.jpg",
       "map": "interiorcourtyard-map.jpg"
     },
     "kitchen": {
       "items": [],
       "name": "The Kitchen",
+      "sounds": ["mater-sound-ringingfromadistance.mp3"],
       "id": 134,
       "doors": ["sewingroom", "storeroom", "diningroom", "parlor"],
       "warps": [],
+      "region": "mater",
       "image": "kitchen-image.jpg",
       "map": "kitchen-map.jpg"
     },
@@ -341,7 +477,9 @@
       "name": "The Leering Ones",
       "id": 200,
       "doors": ["tearoom", "ballroom", "shoin", "catmenagerie"],
+      "sounds": ["soror-sound-musicfromadistance.mp3"],
       "warps": [],
+      "region": "soror",
       "image": "leeringones-image.jpg",
       "map": "leeringones-map.jpg"
     },
@@ -353,6 +491,7 @@
       "id": 90,
       "doors": ["shadowyhallway", "trophyroom", "familiarroompater", "emptyroom"],
       "warps": [],
+      "region": "pater",
       "image": "library-image.jpg",
       "map": "library-map.jpg",
       "map2": "library-map2.jpg"
@@ -363,6 +502,7 @@
       "id": 84,
       "doors": ["livingroom", "boundlessroom"],
       "warps": [],
+      "region": "pater",
       "map": "lightlesshall-map.jpg"
     },
     "livingroom": {
@@ -374,6 +514,7 @@
       "id": 82,
       "doors": ["lightlesshall"],
       "warps": [],
+      "region": "pater",
       "image": "livingroom-image.jpg",
       "map": "livingroom-map.jpg"
     },
@@ -383,6 +524,7 @@
       ],
       "name": "Long Corridor",
       "id": 164,
+      "region": "frater",
       "doors": ["secretroom", "droninghall", "ravendream", "familiarroomfrater", "foyer"],
       "warps": [],
       "image": "longcorridor-image.jpg",
@@ -398,6 +540,7 @@
       "id": 96,
       "doors": ["trophyroom", "familiarroompater"],
       "warps": [],
+      "region": "pater",
       "image": "lyinginstate-image.jpg",
       "map": "lyinginstate-map.jpg"
     },
@@ -407,6 +550,7 @@
       "id": 154,
       "doors": ["sewingroom", "greathall"],
       "warps": [],
+      "region": "mater",
       "image": "mannequinroom-image.jpg",
       "map": "mannequinroom-map.jpg"
     },
@@ -416,8 +560,9 @@
       ],
       "name": "Master Bedroom",
       "id": 238,
-      "doors": ["psychomanteum", "bluecorridor"],
+      "doors": ["prisoner", "bluecorridor"],
       "warps": [],
+      "region": "amator",
       "image": "masterbedroom-image.jpg",
       "map": "masterbedroom-map.jpg"
     },
@@ -429,6 +574,7 @@
       "id": 234,
       "doors": ["privatestudy"],
       "warps": [],
+      "region": "amator",
       "image": "meditationroom-image.jpg",
       "map": "meditationroom-map.jpg"
     },
@@ -440,15 +586,18 @@
       "id": 222,
       "doors": ["shoin", "greathall", "emptybedroom", "gatekeeper"],
       "warps": [],
+      "region": "soror",
       "image": "musicroom-image.jpg",
       "map": "musicroom-map.jpg"
     },
     "narrowstaircase": {
       "items": [],
       "name": "The Narrow Staircase",
+      "sounds": ["mater-sound-ringingfromadistance.mp3"],
       "id": 146,
       "doors": ["greenhouse", "parlor"],
       "warps": [],
+      "region": "mater",
       "map": "narrowstaircase-map.jpg"
     },
     "nursery": {
@@ -460,6 +609,7 @@
       "id": 188,
       "doors": ["childshallway"],
       "warps": [],
+      "region": "frater",
       "image": "nursery-image.jpg",
       "image2": "nursery-image2.jpg",
       "map": "nursery-map.jpg"
@@ -472,6 +622,7 @@
       ],
       "name": "The Original House",
       "id": 268,
+      "region": "original",
       "doors": [],
       "warps": []
     },
@@ -480,7 +631,9 @@
         "remnant13",
         "thearbiter"
       ],
+      "sounds": ["mater-sound-ringingfromadistance.mp3"],
       "name": "Parlor",
+      "region": "mater",
       "id": 130,
       "doors": ["narrowstaircase", "kitchen", "sittingroom", "grandstaircase"],
       "warps": [],
@@ -494,8 +647,9 @@
       ],
       "name": "The Prisoner",
       "id": 250,
-      "doors": ["timeloop"],
+      "doors": ["masterbedroom"],
       "warps": [],
+      "region": "amator",
       "image": "prisoner-image.jpg",
       "map": "prisoner-map.jpg"
     },
@@ -509,6 +663,7 @@
       "id": 230,
       "doors": ["bluecorridor", "meditationroom"],
       "warps": [],
+      "region": "amator",
       "image": "privatestudy-image.jpg",
       "map": "privatestudy-map.jpg"
     },
@@ -516,8 +671,9 @@
       "items": [],
       "name": "Psychomanteum",
       "id": 240,
-      "doors": ["masterbedroom"],
+      "doors": ["timeloop"],
       "warps": [],
+      "region": "amator",
       "image": "psychomanteum-image.jpg",
       "map": "psychomanteum-map.jpg"
     },
@@ -530,6 +686,7 @@
       "id": 174,
       "doors": ["childshallway", "longcorridor"],
       "warps": [],
+      "region": "frater",
       "image": "ravendream-image.jpg",
       "map": "ravendream-map.jpg"
     },
@@ -541,6 +698,7 @@
       "id": 262,
       "doors": ["hallsofthepained"],
       "warps": ["livingroom"],
+      "region": "amator",
       "image": "redroom-image.jpg",
       "map": "redroom-map.jpg"
     },
@@ -550,8 +708,9 @@
       ],
       "name": "The Secret Chapel",
       "id": 218,
-      "doors": ["bedroom", "dollroom", "dog"],
+      "doors": ["archway", "dollroom", "dog"],
       "warps": [],
+      "region": "soror",
       "image": "secretchapel-image.jpg",
       "map": "secretchapel-map.jpg",
       "map2": "secretchapel-map2.jpg"
@@ -565,6 +724,7 @@
       "id": 166,
       "doors": ["longcorridor"],
       "warps": [],
+      "region": "frater",
       "image": "secretroom-image.jpg",
       "image2": "secretroom-image2.jpg",
       "map": "secretroom-map.jpg"
@@ -575,6 +735,7 @@
       "id": 150,
       "doors": ["kitchen", "storeroom", "mannequinroom"],
       "warps": ["armory"],
+      "region": "mater",
       "image": "sewingroom-image.jpg",
       "map": "sewingroom-map.jpg"
     },
@@ -584,6 +745,7 @@
       "id": 100,
       "doors": ["interiorcourtyard", "library"],
       "warps": [],
+      "region": "pater",
       "map": "shadowyhallway-map.jpg"
     },
     "shoin": {
@@ -591,10 +753,13 @@
         "corpsewoman",
         "remnant8"
       ],
+      "sounds": ["shoin-sound-cananyonehearme.mp3", "shoin-sound-dontdothat.mp3",
+    "shoin-sound-doorman.mp3", "shoin-sound-hello.mp3", "shoin-sound-advice.mp3"],
       "name": "The Shoin",
       "id": 208,
       "doors": ["musicroom", "leeringones"],
       "warps": [],
+      "region": "soror",
       "image": "shoin-image.jpg",
       "map": "shoin-map.jpg"
     },
@@ -603,10 +768,12 @@
         "familyportrait",
         "familyportrait2"
       ],
+      "sounds": ["mater-sound-ringingfromadistance.mp3", "sittingroom-sound-motherisverycross.mp3"],
       "name": "The Sitting Room",
       "id": 140,
       "doors": ["diningroom", "parlor"],
       "warps": [],
+      "region": "mater",
       "image": "sittingroom-image.jpg",
       "map": "sittingroom-map.jpg"
     },
@@ -616,6 +783,7 @@
       "id": 172,
       "doors": ["tree", "wheelofblood"],
       "warps": [],
+      "region": "frater",
       "image": "spiritofdestruction-image.jpg",
       "map": "spiritofdestruction-map.jpg"
     },
@@ -627,6 +795,7 @@
       "id": 152,
       "doors": ["sewingroom", "kitchen"],
       "warps": [],
+      "region": "mater",
       "map": "storeroom-map.jpg"
     },
     "storeroomofsorts": {
@@ -637,6 +806,7 @@
       "id": 110,
       "doors": ["emptyroom"],
       "warps": ["armory"],
+      "region": "pater",
       "image": "storeroomofsorts-image.jpg",
       "map": "storeroomofsorts-map.jpg"
     },
@@ -649,6 +819,7 @@
       "id": 180,
       "doors": ["childshallway"],
       "warps": [],
+      "region": "frater",
       "image": "studio-image.jpg",
       "map": "studio-map.jpg"
     },
@@ -658,6 +829,7 @@
       "id": 256,
       "doors": ["timeloop"],
       "warps": [],
+      "region": "amator",
       "image": "summoningchamber-image.jpg",
       "map": "summoningchamber-map.jpg"
     },
@@ -667,6 +839,7 @@
       "id": 202,
       "doors": ["leeringones", "archway"],
       "warps": [],
+      "region": "soror",
       "image": "tearoom-image.jpg",
       "map": "tearoom-map.jpg"
     },
@@ -674,8 +847,9 @@
       "items": [],
       "name": "Time Loop",
       "id": 248,
-      "doors": ["summoningchamber", "vestibule", "prisoner", "familiarroomamator"],
+      "doors": ["summoningchamber", "vestibule", "psychomanteum", "familiarroomamator"],
       "warps": [],
+      "region": "amator",
       "image": "timeloop-image.jpg",
       "map": "timeloop-map.jpg"
     },
@@ -685,6 +859,7 @@
       "id": 170,
       "doors": ["spiritofdestruction", "droninghall"],
       "warps": [],
+      "region": "frater",
       "image": "tree-image.jpg",
       "map": "tree-map.jpg"
     },
@@ -694,6 +869,7 @@
       "id": 98,
       "doors": ["lyinginstate", "library"],
       "warps": [],
+      "region": "pater",
       "image": "trophyroom-image.jpg",
       "map": "trophyroom-map.jpg"
     },
@@ -705,6 +881,7 @@
       "id": 242,
       "doors": ["bluecorridor", "familiarroomamator"],
       "warps": [],
+      "region": "amator",
       "image": "twistedroom-image.jpg",
       "map": "twistedroom-map.jpg"
     },
@@ -716,7 +893,8 @@
       "name": "The Vestibule",
       "id": 244,
       "doors": ["timeloop", "bluecorridor"],
-      "warps": ["originalhouse"],
+      "warps": ["original-foyer"],
+      "region": "amator",
       "image": "vestibule-image.jpg",
       "map": "vestibule-map.jpg"
     },
@@ -726,6 +904,7 @@
       "id": 194,
       "doors": ["foyer", "dollroom"],
       "warps": [],
+      "region": "soror",
       "image": "walledgarden-image.jpg",
       "map": "walledgarden-map.jpg"
     },
@@ -740,6 +919,7 @@
       "id": 158,
       "doors": ["grandstaircase", "spiritofdestruction"],
       "warps": [],
+      "region": "mater",
       "map": "wheelofblood-map.jpg"
     },
     "winecellar": {
@@ -748,6 +928,7 @@
       "id": 142,
       "doors": ["diningroom"],
       "warps": [],
+      "region": "mater",
       "image": "winecellar-image.jpg",
       "map": "winecellar-map.jpg"
     }

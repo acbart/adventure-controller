@@ -1,0 +1,588 @@
+{
+  "universal": {},
+  "rooms": {
+    "alchemy_lab": {
+      "name": "Alchemy Lab",
+      "region": "int",
+      "id": 14,
+      "items": [],
+      "warps": [],
+      "doors": ["spiral_staircase"]
+    },
+    "archery_range": {
+      "name": "The Archery Range",
+      "region": "str",
+      "id": 48,
+      "items": [],
+      "warps": [],
+      "doors": ["courtyard", "guards_room"]
+    },
+    "atrium": {
+      "name": "An Atrium",
+      "region": "int",
+      "id": 7,
+      "items": [],
+      "warps": [],
+      "doors": ["ballroom", "clocktower"]
+    },
+    "attic": {
+      "name": "An Attic",
+      "region": "dex",
+      "id": 72,
+      "items": [],
+      "warps": [],
+      "doors": ["quiet_hall"]
+    },
+    "aviary": {
+      "name": "The Aviary",
+      "region": "int",
+      "id": 18,
+      "items": [],
+      "warps": [],
+      "doors": ["spiral_staircase", "parapets"]
+    },
+    "balcony": {
+      "name": "The Balcony",
+      "region": "str",
+      "id": 56,
+      "items": [],
+      "warps": ["gardens"],
+      "doors": ["grand_corridor"]
+    },
+    "ballroom": {
+      "name": "The Ballroom",
+      "region": "wis",
+      "id": 6,
+      "items": [],
+      "warps": [],
+      "doors": ["shrine", "atrium", "grand_hall"]
+    },
+    "barracks": {
+      "name": "The Barracks",
+      "region": "str",
+      "id": 46,
+      "items": [],
+      "warps": [],
+      "doors": ["guards_room", "courtyard"]
+    },
+    "baths": {
+      "name": "Baths",
+      "region": "dex",
+      "id": 74,
+      "items": [],
+      "warps": [],
+      "doors": ["quiet_hall", "sauna"]
+    },
+    "bedrooms": {
+      "name": "Bedrooms",
+      "region": "dex",
+      "id": 67,
+      "items": [],
+      "warps": [],
+      "doors": ["quiet_hall", "wardrobe"]
+    },
+    "beneath_moat": {
+      "name": "Beneath the Moat",
+      "region": "cha",
+      "id": 4,
+      "items": [],
+      "warps": [],
+      "doors": ["moat", "caverns"]
+    },
+    "boudoir": {
+      "name": "A Boudoir",
+      "region": "dex",
+      "id": 71,
+      "items": [],
+      "warps": [],
+      "doors": ["quiet_hall"]
+    },
+    "cabinet": {
+      "name": "A Cabinet",
+      "region": "dex",
+      "id": 70,
+      "items": [],
+      "warps": [],
+      "doors": ["quiet_hall"]
+    },
+    "caverns": {
+      "name": "Caverns",
+      "region": "cha",
+      "id": 43,
+      "items": [],
+      "warps": [],
+      "doors": ["pit", "dungeons", "beneath_moat","underground_lake"]
+    },
+    "classroom": {
+      "name": "A Classroom",
+      "region": "int",
+      "id": 13,
+      "items": [],
+      "warps": [],
+      "doors": ["library", "east_corridor"]
+    },
+    "clocktower": {
+      "name": "The Clocktower",
+      "region": "int",
+      "id": 8,
+      "items": [],
+      "warps": [],
+      "doors": ["atrium", "spiral_staircase"]
+    },
+    "courtyard":{
+      "name": "The Courtyard",
+      "region": "con",
+      "id": 26,
+      "items": [],
+      "warps": [],
+      "doors": ["gallery", "grand_hall", "archery_range", "shoppes", "barracks", "grand_corridor", "gardens", "kennels", "stables", "ice_house"]
+    },
+    "crypt": {
+      "name": "An Ancient Crypt",
+      "region": "cha",
+      "id": 39,
+      "items": [],
+      "warps": [],
+      "doors": ["labyrinth"]
+    },
+    "crystal_room": {
+      "name": "Crystal Room",
+      "region": "cha",
+      "id": 40,
+      "items": [],
+      "warps": [],
+      "doors": ["labyrinth"]
+    },
+    "dining_hall": {
+      "name": "The Dining Hall",
+      "region": "wis",
+      "id": 23,
+      "items": [],
+      "warps": [],
+      "doors": ["east_corridor", "grand_corridor", "kitchen", "quiet_hall"]
+    },
+
+    "drawing_room": {
+      "name": "The Drawing Room",
+      "region": "wis",
+      "id": 21,
+      "items": [],
+      "warps": [],
+      "doors": ["entrance_hall", "gallery"]
+    },
+    
+    "dungeons": {
+      "name": "The Dungeons",
+      "region": "wis",
+      "id": 19,
+      "items": [],
+      "warps": [],
+      "doors": ["foreboding_stairs", "caverns"]
+    },
+
+    "east_corridor": {
+      "name": "The East Corridor",
+      "region": "wis",
+      "id": 25,
+      "items": [],
+      "warps": [],
+      "doors": ["grand_hall", "dining_hall", "parapets", "classroom"]
+    },
+    "endless_sea": {
+      "name": "The Endless Sea",
+      "region": "cha",
+      "id": 41,
+      "items": [],
+      "warps": [],
+      "doors": ["shore"]
+    },
+    "entrance_hall": {
+      "name": "The Entrance Hall",
+      "region": "wis",
+      "id": 3,
+      "items": [],
+      "warps": [],
+      "doors": ["front_gate", "shrine", "tapestry_stairs", "foreboding_stairs", "mirror_room", "drawing_room"]
+    },
+    "fire_house": {
+      "name": "The Fire House",
+      "region": "con",
+      "id": 32,
+      "items": [],
+      "warps": ["ice_house"],
+      "doors": ["forge", "mirror_room"]
+    },
+
+    "foreboding_stairs": {
+      "name": "The Foreboding Stairs",
+      "region": "wis",
+      "id": 20,
+      "items": [],
+      "warps": [],
+      "doors": ["entrance_hall", "dungeons"]
+    },
+    "forest": {
+      "name": "The Mysterious Forest",
+      "region": "null",
+      "id": 76,
+      "items": [],
+      "warps": ["wardrobe"],
+      "doors": ["moat"]
+    },
+    "forge": {
+      "name": "The Forge",
+      "region": "con",
+      "id": 34,
+      "items": [],
+      "warps": [],
+      "doors": ["fire_house"]
+    },
+
+    "front_gate": {
+      "name": "The Front Gate",
+      "region": "null",
+      "id": 2,
+      "items": [],
+      "warps": [],
+      "doors": ["moat", "entrance_hall"]
+    },
+    "gallery": {
+      "name": "The Gallery",
+      "region": "wis",
+      "id": 22,
+      "items": [],
+      "warps": [],
+      "doors": ["drawing_room", "grand_hall", "courtyard"]
+    },
+    "gardens": {
+      "name": "The Gardens",
+      "region": "con",
+      "id": 29,
+      "items": [],
+      "warps": ["balcony", "sauna"],
+      "doors": ["courtyard", "hedge_maze", "west_gate"]
+    },
+    "grand_corridor": {
+      "name": "The Grand Corridor",
+      "region": "str",
+      "id": 51,
+      "items": [],
+      "warps": [],
+      "doors": ["courtyard", "balcony", "throne_room", "strategy_room", "dining_hall", "inner_landing", "state_room"]
+    },
+    "grand_hall": {
+      "name": "The Grand Hall",
+      "region": "wis",
+      "id": 10,
+      "items": [],
+      "warps": [],
+      "doors": ["tapestry_stairs", "ballroom", "spiral_staircase", "east_corridor", "courtyard", "gallery"]
+    },
+    "guards_room": {
+      "name": "The Guards' Rooms",
+      "region": "str",
+      "id": 45,
+      "items": [],
+      "warps": [],
+      "doors": ["barracks", "mess_hall", "shoppes", "archery_range"]
+    },
+    "hedge_maze": {
+      "name": "The Hedge Maze",
+      "region": "con",
+      "id": 30,
+      "items": [],
+      "warps": [],
+      "doors": ["gardens", "statue_garden"]
+    },
+    "ice_house": {
+      "name": "The Ice House",
+      "region": "con",
+      "id": 33,
+      "items": [],
+      "warps": ["fire_house"],
+      "doors": ["courtyard"]
+    },
+    "inner_landing": {
+      "name": "The Inner Landing",
+      "region": "str",
+      "id": 59,
+      "items": [],
+      "warps": [],
+      "doors": ["kitchen", "grand_corridor", "quiet_hall"]
+    },
+    "inverted_room": {
+      "name": "The Inverted Room",
+      "region": "int",
+      "id": 12,
+      "items": [],
+      "warps": [],
+      "doors": ["library"]
+    },
+    "kennels": {
+      "name": "The Kennels",
+      "region": "con",
+      "id": 28,
+      "items": [],
+      "warps": [],
+      "doors": ["courtyard", "stables"]
+    },
+    "kitchen": {
+      "name": "The Kitchen",
+      "region": "dex",
+      "id": 60,
+      "items": [],
+      "warps": [],
+      "doors": ["mess_hall", "dining_hall", "larder", "wine_cellar", "inner_landing"]
+    },
+    "labyrinth": {
+      "name": "The Labyrinth",
+      "region": "cha",
+      "id": 38,
+      "items": [],
+      "warps": [],
+      "doors": ["vault", "underground_lake", "crypt", "shore", "crystal_room"]
+    },
+    "larder": {
+      "name": "The Larder",
+      "region": "dex",
+      "id": 62,
+      "items": [],
+      "warps": [],
+      "doors": ["kitchen"]
+    },
+    "library": {
+      "name": "The Library",
+      "region": "int",
+      "id": 11,
+      "items": [],
+      "warps": [],
+      "doors": ["classroom", "inverted_room", "spiral_staircase"]
+    },
+    "master_bedrooms": {
+      "name": "Master Bedrooms",
+      "region": "dex",
+      "id": 66,
+      "items": [],
+      "warps": [],
+      "doors": ["quiet_hall"]
+    },
+    "mess_hall": {
+      "name": "The Mess Hall",
+      "region": "str",
+      "id": 49,
+      "items": [],
+      "warps": [],
+      "doors": ["guards_room", "kitchen"]
+    },
+    "mirror_room": {
+      "name": "The Mirror Room",
+      "region": "cha",
+      "id": 36,
+      "items": [],
+      "warps": [],
+      "doors": ["entrance_hall", "fire_house", "treasury"]
+    },
+    "moat": {
+      "name": "The Moat",
+      "region": "null",
+      "id": 1,
+      "items": [],
+      "warps": [],
+      "doors": ["front_gate", "beneath_moat", "forest"]
+    },
+    "orrery": {
+      "name": "The Orrery",
+      "region": "int",
+      "id": 15,
+      "items": [],
+      "warps": [],
+      "doors": ["spiral_staircase"]
+    },
+    "parapets": {
+      "name": "Parepets",
+      "region": "int",
+      "id": 18,
+      "items": [],
+      "warps": [],
+      "doors": ["tower", "aviary", "east_corridor"]
+    },
+    "pit": {
+      "name": "The Pit",
+      "region": "cha",
+      "id": 44,
+      "items": [],
+      "warps": [],
+      "doors": ["caverns"]
+    },
+    "quiet_hall": {
+      "name": "The Quiet Hall",
+      "region": "dex",
+      "id": 65,
+      "items": [],
+      "warps": [],
+      "doors": ["dining_hall", "inner_landing", "baths", "bedrooms", "cabinet", "attic", "boudoir", "master_bedrooms", "servants_quarters"]
+    },
+    "sauna": {
+      "name": "Sauna",
+      "region": "con",
+      "id": 75,
+      "items": [],
+      "warps": ["gardens"],
+      "doors": ["baths"]
+    },
+    "servants_quarters": {
+      "name": "The Servants' Quarters",
+      "region": "dex",
+      "id": 63,
+      "items": [],
+      "warps": [],
+      "doors": ["kitchen", "quiet_hall"]
+    },
+    "shoppes": {
+      "name": "Shoppes",
+      "region": "str",
+      "id": 58,
+      "items": [],
+      "warps": [],
+      "doors": ["guards_room", "courtyard"]
+    },
+    "shore": {
+      "name": "A Shore",
+      "region": "cha",
+      "id": 40,
+      "items": [],
+      "warps": [],
+      "doors": ["labyrinth", "west_gate", "endless_sea"]
+    },
+    "shrine": {
+      "name": "Shrine",
+      "region": "wis",
+      "id": 5,
+      "items": [],
+      "warps": [],
+      "doors": ["entrance_hall", "ballroom"]
+    },
+    "spiral_staircase": {
+      "name": "A Spiral Staircase",
+      "region": "int",
+      "id": 16,
+      "items": [],
+      "warps": [],
+      "doors": ["alchemy_lab", "clocktower", "library", "grand_hall", "orrery", "aviary"]
+    },
+    "stables": {
+      "name": "The Stables",
+      "region": "con",
+      "id": 27,
+      "items": [],
+      "warps": [],
+      "doors": ["courtyard", "kennels"]
+    },
+    "state_room": {
+      "name": "The State Room",
+      "region": "str",
+      "id": 53,
+      "items": [],
+      "warps": [],
+      "doors": ["grand_corridor"]
+    },
+    "statue_garden": {
+      "name": "The Statue Garden",
+      "region": "con",
+      "id": 31,
+      "items": [],
+      "warps": [],
+      "doors": ["hedge_maze"]
+    },
+    "strategy_room": {
+      "name": "The Strategy Room",
+      "region": "str",
+      "id": 50,
+      "items": [],
+      "warps": [],
+      "doors": ["grand_corridor"]
+    },
+    "tapestry_stairs": {
+      "name": "Tapestry Stairs",
+      "region": "wis",
+      "id": 9,
+      "items": [],
+      "warps": [],
+      "doors": [],
+      "notes": ["The only way to actually go to the Grand Hall is to go through the tapestry, the physical stairs loop endlessly."]
+    },
+    "throne_room": {
+      "name": "The Throne Room",
+      "region": "str",
+      "id": 54,
+      "items": [],
+      "warps": [],
+      "doors": ["grand_corridor"]
+    },
+    "tower": {
+      "name": "The Tower",
+      "region": "int",
+      "id": 17,
+      "items": [],
+      "warps": [],
+      "doors": ["parapets"]
+    },
+    "treasury": {
+      "name": "The Treasury",
+      "region": "cha",
+      "id": 37,
+      "items": [],
+      "warps": [],
+      "doors": ["mirror_room", "vault"]
+    },
+    "underground_lake": {
+      "name": "The Underground Lake",
+      "region": "cha",
+      "id": 42,
+      "items": [],
+      "warps": [],
+      "doors": ["caverns", "labyrinth"]
+    },
+    "vault": {
+      "name": "The Secret Vault",
+      "region": "cha",
+      "id": 38,
+      "items": [],
+      "warps": [],
+      "doors": ["labyrinth", "treasury"]
+    },
+    "wandering_room": {
+      "name": "The Wandering Room",
+      "region": "null",
+      "id": 100,
+      "items": [],
+      "warps": [],
+      "doors": []
+    },
+    "wardrobe": {
+      "name": "The Wardrobe",
+      "region": "dex",
+      "id": 69,
+      "items": [],
+      "warps": ["forest"],
+      "doors": ["bedrooms"]
+    },
+    "west_gate": {
+      "name": "The West Gate",
+      "region": "con",
+      "id": 35,
+      "items": [],
+      "warps": [],
+      "doors": ["gardens", "shore"]
+    },
+    "wine_cellar": {
+      "name": "A Wine Cellar",
+      "region": "dex",
+      "id": 61,
+      "items": [],
+      "warps": [],
+      "doors": ["kitchen"]
+    }
+  }
+}
+

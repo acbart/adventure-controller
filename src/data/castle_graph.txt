@@ -1,0 +1,190 @@
+digraph G {
+  splines=true;
+  subgraph cluster_int {
+    label="Int"
+    alchemy_lab;atrium;aviary;classroom;clocktower;inverted_room;library;orrery;parapets;spiral_staircase;tower;
+  }
+  subgraph cluster_str {
+    label="Str"
+    archery_range;balcony;barracks;grand_corridor;guards_room;inner_landing;mess_hall;shoppes;state_room;strategy_room;throne_room;
+  }
+  subgraph cluster_dex {
+    label="Dex"
+    attic;baths;bedrooms;boudoir;cabinet;kitchen;larder;master_bedrooms;quiet_hall;servants_quarters;wardrobe;wine_cellar;
+  }
+  subgraph cluster_wis {
+    label="Wis"
+    ballroom;dining_hall;drawing_room;dungeons;east_corridor;entrance_hall;foreboding_stairs;gallery;grand_hall;shrine;tapestry_stairs;
+  }
+  subgraph cluster_cha {
+    label="Cha"
+    beneath_moat;caverns;crypt;crystal_room;endless_sea;labyrinth;mirror_room;pit;shore;treasury;underground_lake;vault;
+  }
+  subgraph cluster_con {
+    label="Con"
+    courtyard;fire_house;forge;gardens;hedge_maze;ice_house;kennels;sauna;stables;statue_garden;west_gate;
+  }
+  subgraph cluster_null {
+    label="Null"
+    forest;front_gate;moat;wandering_room;
+  }
+  alchemy_lab [label="Alchemy Lab"];
+  alchemy_lab -> spiral_staircase [dir=both];
+  archery_range [label="The Archery Range"];
+  archery_range -> courtyard [dir=both];
+  archery_range -> guards_room [dir=both];
+  atrium [label="An Atrium"];
+  atrium -> ballroom [dir=both];
+  atrium -> clocktower [dir=both];
+  attic [label="An Attic"];
+  attic -> quiet_hall [dir=both];
+  aviary [label="The Aviary"];
+  aviary -> spiral_staircase [dir=both];
+  aviary -> parapets [dir=both];
+  balcony [label="The Balcony"];
+  balcony -> grand_corridor [dir=both];
+  ballroom [label="The Ballroom"];
+  ballroom -> shrine [dir=both];
+  ballroom -> grand_hall [dir=both];
+  barracks [label="The Barracks"];
+  barracks -> guards_room [dir=both];
+  barracks -> courtyard [dir=both];
+  baths [label="Baths"];
+  baths -> quiet_hall [dir=both];
+  baths -> sauna [dir=both];
+  bedrooms [label="Bedrooms"];
+  bedrooms -> quiet_hall [dir=both];
+  bedrooms -> wardrobe [dir=both];
+  beneath_moat [label="Beneath the Moat"];
+  beneath_moat -> moat [dir=both];
+  beneath_moat -> caverns [dir=both];
+  boudoir [label="A Boudoir"];
+  boudoir -> quiet_hall [dir=both];
+  cabinet [label="A Cabinet"];
+  cabinet -> quiet_hall [dir=both];
+  caverns [label="Caverns"];
+  caverns -> pit [dir=both];
+  caverns -> dungeons [dir=both];
+  caverns -> underground_lake [dir=both];
+  classroom [label="A Classroom"];
+  classroom -> library [dir=both];
+  classroom -> east_corridor [dir=both];
+  clocktower [label="The Clocktower"];
+  clocktower -> spiral_staircase [dir=both];
+  courtyard [label="The Courtyard"];
+  courtyard -> gallery [dir=both];
+  courtyard -> grand_hall [dir=both];
+  courtyard -> shoppes [dir=both];
+  courtyard -> grand_corridor [dir=both];
+  courtyard -> gardens [dir=both];
+  courtyard -> kennels [dir=both];
+  courtyard -> stables [dir=both];
+  courtyard -> ice_house [dir=both];
+  crypt [label="An Ancient Crypt"];
+  crypt -> labyrinth [dir=both];
+  crystal_room [label="Crystal Room"];
+  crystal_room -> labyrinth [dir=both];
+  dining_hall [label="The Dining Hall"];
+  dining_hall -> east_corridor [dir=both];
+  dining_hall -> grand_corridor [dir=both];
+  dining_hall -> kitchen [dir=both];
+  dining_hall -> quiet_hall [dir=both];
+  drawing_room [label="The Drawing Room"];
+  drawing_room -> entrance_hall [dir=both];
+  drawing_room -> gallery [dir=both];
+  dungeons [label="The Dungeons"];
+  dungeons -> foreboding_stairs [dir=both];
+  east_corridor [label="The East Corridor"];
+  east_corridor -> grand_hall [dir=both];
+  east_corridor -> parapets [dir=both];
+  endless_sea [label="The Endless Sea"];
+  endless_sea -> shore [dir=both];
+  entrance_hall [label="The Entrance Hall"];
+  entrance_hall -> front_gate [dir=both];
+  entrance_hall -> shrine [dir=both];
+  entrance_hall -> tapestry_stairs [dir=both];
+  entrance_hall -> foreboding_stairs [dir=both];
+  entrance_hall -> mirror_room [dir=both];
+  fire_house [label="The Fire House"];
+  fire_house -> forge [dir=both];
+  fire_house -> mirror_room [dir=both];
+  foreboding_stairs [label="The Foreboding Stairs"];
+  forest [label="The Mysterious Forest"];
+  forest -> moat [dir=both];
+  forge [label="The Forge"];
+  front_gate [label="The Front Gate"];
+  front_gate -> moat [dir=both];
+  gallery [label="The Gallery"];
+  gallery -> grand_hall [dir=both];
+  gardens [label="The Gardens"];
+  gardens -> hedge_maze [dir=both];
+  gardens -> west_gate [dir=both];
+  grand_corridor [label="The Grand Corridor"];
+  grand_corridor -> throne_room [dir=both];
+  grand_corridor -> strategy_room [dir=both];
+  grand_corridor -> inner_landing [dir=both];
+  grand_corridor -> state_room [dir=both];
+  grand_hall [label="The Grand Hall"];
+  grand_hall -> tapestry_stairs [dir=both];
+  grand_hall -> spiral_staircase [dir=both];
+  guards_room [label="The Guards' Rooms"];
+  guards_room -> mess_hall [dir=both];
+  guards_room -> shoppes [dir=both];
+  hedge_maze [label="The Hedge Maze"];
+  hedge_maze -> statue_garden [dir=both];
+  ice_house [label="The Ice House"];
+  inner_landing [label="The Inner Landing"];
+  inner_landing -> kitchen [dir=both];
+  inner_landing -> quiet_hall [dir=both];
+  inverted_room [label="The Inverted Room"];
+  inverted_room -> library [dir=both];
+  kennels [label="The Kennels"];
+  kennels -> stables [dir=both];
+  kitchen [label="The Kitchen"];
+  kitchen -> mess_hall [dir=both];
+  kitchen -> larder [dir=both];
+  kitchen -> wine_cellar [dir=both];
+  labyrinth [label="The Labyrinth"];
+  labyrinth -> vault [dir=both];
+  labyrinth -> underground_lake [dir=both];
+  labyrinth -> shore [dir=both];
+  larder [label="The Larder"];
+  library [label="The Library"];
+  library -> spiral_staircase [dir=both];
+  master_bedrooms [label="Master Bedrooms"];
+  master_bedrooms -> quiet_hall [dir=both];
+  mess_hall [label="The Mess Hall"];
+  mirror_room [label="The Mirror Room"];
+  mirror_room -> treasury [dir=both];
+  moat [label="The Moat"];
+  orrery [label="The Orrery"];
+  orrery -> spiral_staircase [dir=both];
+  parapets [label="Parepets"];
+  parapets -> tower [dir=both];
+  pit [label="The Pit"];
+  quiet_hall [label="The Quiet Hall"];
+  quiet_hall -> servants_quarters [dir=both];
+  sauna [label="Sauna"];
+  servants_quarters [label="The Servants' Quarters"];
+  servants_quarters -> kitchen [dir=both];
+  shoppes [label="Shoppes"];
+  shore [label="A Shore"];
+  shore -> west_gate [dir=both];
+  shrine [label="Shrine"];
+  spiral_staircase [label="A Spiral Staircase"];
+  stables [label="The Stables"];
+  state_room [label="The State Room"];
+  statue_garden [label="The Statue Garden"];
+  strategy_room [label="The Strategy Room"];
+  tapestry_stairs [label="Tapestry Stairs"];
+  throne_room [label="The Throne Room"];
+  tower [label="The Tower"];
+  treasury [label="The Treasury"];
+  treasury -> vault [dir=both];
+  underground_lake [label="The Underground Lake"];
+  vault [label="The Secret Vault"];
+  wandering_room [label="The Wandering Room"];
+  wardrobe [label="The Wardrobe"];
+  west_gate [label="The West Gate"];
+  wine_cellar [label="A Wine Cellar"];
+}

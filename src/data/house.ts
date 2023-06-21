@@ -7,13 +7,22 @@ export interface Room {
     doors: string[];
     warps: string[];
     map: string;
+    region: string;
     image: string;
     image2: string;
+    sounds: string[];
+}
+
+export interface Region {
+  color: string;
+  tags: string[];
+  name: string;
 }
 
 export interface HouseGraph {
     universal: Record<string, string>;
     rooms: Record<string, Room>;
+    regions: Record<string, Region>;
 }
 
 export const house = houseRaw as unknown as HouseGraph;

@@ -1,17 +1,35 @@
 import React, { ChangeEvent, useCallback, useEffect, useState, useRef } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import NewWindow from 'react-new-window'
 import Form from 'react-bootstrap/Form';
-import { Col, Container, Row, Button } from "react-bootstrap";
-import { house, MISSING_IMAGE, Room, ViewMode } from "./data/house";
+import { Col, Container, Row, Button, FloatingLabel } from "react-bootstrap";
+import { house, MISSING_IMAGE, Region, Room, ViewMode } from "./data/house";
 import { RoomPreview } from "./components/RoomPreview";
 import { determineBestModeAvailable } from "./components/ViewModeSetter";
 import { TravelButton } from "./components/TravelButton";
 import { ItemButton } from "./components/ItemButton";
+import { AltMapOverview, makeMapOverview } from "./components/AltMapOverview";
+import cytoscape from "cytoscape";
+
+const VISITED_NODES_LS_KEY = 'ADVENTURE-CONTROLLER-VISITED';
+const SAVED_VISITED_NODES = JSON.parse(localStorage.getItem(VISITED_NODES_LS_KEY) || "{}");
+
+const CYTOSCAPE_EMBEDS = [
+  `<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.23.0/cytoscape.min.js"></script>`,
+  `<script src="https://unpkg.com/weaverjs@1.2.0/dist/weaver.min.js"></script>`,
+  `<script src="https://cdn.jsdelivr.net/npm/cytoscape-spread@3.0.0/cytoscape-spread.min.js"></script>`,
+  `<script src="https://unpkg.com/layout-base/layout-base.js"></script>`,
+  `<script src="https://unpkg.com/cose-base/cose-base.js"></script>`,
+  `<script src="https://unpkg.com/cytoscape-layout-utilities/cytoscape-layout-utilities.js"></script>`,
+  `<script src="https://cdn.jsdelivr.net/npm/cytoscape-fcose@2.2.0/cytoscape-fcose.min.js"></script>`
+  // `<script src="https://unpkg.com/webcola/WebCola/cola.min.js"></script>`,
+  // `<script src="https://cdn.jsdelivr.net/npm/cytoscape-cola@2.4.0/cytoscape-cola.min.js"></script>`
+];
 
 const ITEM_MAP: Record<string, string> = {};
 const GLOBAL_ITEMS: string[] = [
-  "brother", "sister", "father", "mother", 
+  "brother", "sister", "father", "mother", "cultist", "dress", "sanderson", "lacuna.mp4"
 ];
 
 Object.entries(house.rooms).forEach(([name, room]: [string, Room]) => {
@@ -19,6 +37,35 @@ Object.entries(house.rooms).forEach(([name, room]: [string, Room]) => {
     ITEM_MAP[item] = `${name}-show-${item}.jpg`;
   });
 });
+
+function resetDisplay(display: Window, contents: string) {
+  display.document.body.innerHTML = "";
+  display.document.head.innerHTML = "";
+  const head = display.document.getElementsByTagName("head")[0];
+  CYTOSCAPE_EMBEDS.forEach((embedScript: string) => {
+    head.append(display.document.createRange().createContextualFragment(embedScript));
+  });
+  display.document.write(
+    `<div style="position: relative;" id="main">${contents}</div>`
+  );
+  display.document.body.style.background = "black";
+  display.document.body.style.height = "100%";
+}
+
+function toggleFullscreen(display: Window) {
+  return function (evt: MouseEvent) {
+    if (
+      display?.document.body === display?.document.fullscreenElement
+    ) {
+      display?.document.exitFullscreen();
+    } else {
+      display?.document.body.requestFullscreen();
+    }
+  };
+}
+
+export type PREVIEW_TYPE = "image" | "map" | "video";
+
 
 function App() {
   const [playerRoom, setPlayerRoom] = useState<string>("livingroom");
@@ -32,46 +79,93 @@ function App() {
   const [itemStack, setItemStack] = useState<string[]>([]);
   const [rotation, setRotation] = useState<number>(0);
   const [jumpWithFocus, setJumpWithFocus ] = useState<boolean>(true);
+  const [skipInitialJump, setSkipInitialJump] = useState<boolean>(true);
   var [display, setDisplay] = useState<Window | null>(null);
   const playerImageRef = useRef<HTMLImageElement | null>(null);
+  const [visitedNodes, setVisitedNodes] = useState<Record<string, boolean>>(SAVED_VISITED_NODES);
+  const [showMap, setShowMap] = useState<boolean>(false);
+  const [mapFilter, setMapFilter] = useState<string>("");
+
+  useEffect(() => {
+    localStorage.setItem(VISITED_NODES_LS_KEY, JSON.stringify(visitedNodes));
+  }, [visitedNodes]);
+
+  const visit = useCallback((room: string, visited: boolean) => {
+    setVisitedNodes({...visitedNodes, [room]: visited})
+  }, [visitedNodes, setVisitedNodes]);
+
+  const setMapFilters = useCallback((evt: ChangeEvent<HTMLSelectElement>) => {
+    setMapFilter(evt.target.value);
+  }, [setMapFilter]);
 
   const updatePreviewWindow = useCallback(
-    (image: string) => {
+    (image: string, tag: string) => {
       if (display) {
-        display.document.body.innerHTML = "";
-        display.document.write(
-          `<div style="text-align: center;">${image}</div>`
-        );
-        display.document.body.style.background = "black";
-        display.document.body.style.height = "100%";
-        const img = display.document.querySelector("img");
-        if (img) {
-          img.onclick = function (evt: MouseEvent) {
-            if (
-              display?.document.body === display?.document.fullscreenElement
-            ) {
-              display?.document.exitFullscreen();
-            } else {
-              display?.document.body.requestFullscreen();
-            }
-          };
+        resetDisplay(display, image);
+        const mainBody = display.document.getElementById('main');
+        if (mainBody) {
+          mainBody.style.textAlign = "center";
         }
-        display.onbeforeunload = ()=> setDisplay(null);
+        const img = display.document.querySelector(tag) as HTMLImageElement;
+        if (img) {
+          img.onclick = toggleFullscreen(display);
+        }
+        display.onbeforeunload = ()=> {
+          setDisplay(null);
+          setShowMap(false);
+        };
       }
     },
     [display]
   );
+  const showMapPreviewWindow = useCallback(()=>{
+    if (display) {
+      resetDisplay(display, "");
+      const mainBody = display.document.getElementById('main');
+      if (mainBody) {
+        mainBody.style.width = "100%";
+        mainBody.style.height = "100%";
+        const mapJson = JSON.stringify(makeMapOverview(visitedNodes, mapFilter));
+        display.document.write(`<script>
+          cytoscape.use(cytoscapeSpread);
+          cy = cytoscape({
+            container: document.getElementById('main'),
+            ...${mapJson}
+          });
+        </script>`);
+      }
+      // const img = display.document.querySelector("img");
+      // if (img) {
+      //   img.onclick = toggleFullscreen(display);
+      // }
+      display.onbeforeunload = ()=> {
+        setDisplay(null);
+        setShowMap(false);
+      };
+    }
+  }, [display, setDisplay, visitedNodes, mapFilter]);
 
   function rotate(amount: number) {
     setRotation((rotation + amount) % 360);
   }
 
   useEffect(() => {
+    if (showMap) {
+      return showMapPreviewWindow();
+    }
+    let filetype: PREVIEW_TYPE = "image";
     let filename = MISSING_IMAGE;
     if (itemStack.length > 0) {
       const shownItem = itemStack[0];
       if (GLOBAL_ITEMS.includes(shownItem)) {
-        filename = `${shownItem}.jpg`;
+        if (shownItem.endsWith(".mp4")) {
+          filename = shownItem;
+          filetype = "video";
+        } else {
+          filename = `${shownItem}.jpg`;
+        }
+      } else if (shownItem.startsWith("backrooms-0")) {
+        filename = `backrooms/${shownItem}.jpeg`;
       } else {
         filename = ITEM_MAP[shownItem];
       }
@@ -79,12 +173,21 @@ function App() {
       const room = house.rooms[playerRoom];
       const shownMode = determineBestModeAvailable(playerMode, room);
       filename = room[shownMode];
+      if (filename && filename.endsWith(".mp4")) {
+        filetype = "video";
+      }
     }
     if (filename === undefined) {
       filename = MISSING_IMAGE;
     }
-    const img = `<img src="house_images/${filename}" height="100%" style="transform: rotate(${rotation}deg)">`;
-    updatePreviewWindow(img);
+    switch (filetype) {
+      case "video":
+        updatePreviewWindow(`<video autoplay loop muted src="house_images/${filename}" height="100%" style="transform: rotate(${rotation}deg)"></video>`, "video");
+        break;
+      case "image": default:
+        updatePreviewWindow(`<img src="house_images/${filename}" height="100%" style="transform: rotate(${rotation}deg)">`, "img");
+        break;
+    }
   }, [
     display,
     playerRoom,
@@ -92,12 +195,17 @@ function App() {
     updatePreviewWindow,
     itemStack,
     rotation,
+    showMap,
+    visitedNodes,
+    showMapPreviewWindow,
+    mapFilter
   ]);
 
   useEffect(() => {
-    if (jumpWithFocus) {
+    if (jumpWithFocus && !skipInitialJump) {
       playerImageRef?.current?.scrollIntoView();
     }
+    setSkipInitialJump(false);
   }, [playerRoom, playerMode]);
 
   function showItem(item: string) {
@@ -146,6 +254,11 @@ function App() {
 
   return (
     <Container className="App">
+      {/* <Row>
+        <Col>
+          <AltMapOverview visitedNodes={visitedNodes}></AltMapOverview>
+        </Col>
+      </Row> */}
       <Row>
         <Col xs={true} sm={true}>
           <RoomPreview
@@ -161,6 +274,8 @@ function App() {
             itemStack={itemStack}
             mode={viewingMode}
             setMode={setViewingMode}
+            visit={visit}
+            visited={visitedNodes[viewingRoom]}
           ></RoomPreview>
         </Col>
         <Col>
@@ -228,6 +343,28 @@ function App() {
                 closeItem={closeItem}
               ></ItemButton>)}
           </div>
+          <Row className="justify-content-md-center align-items-center">
+            <Col md="auto">
+            <Button variant={showMap ? "success" : "primary"}
+              onClick={()=>setShowMap(!showMap)}
+              disabled={display===null}
+            >{showMap ? "Hide Map" : "Show Map"}</Button>
+            </Col>
+            <Col>
+            <FloatingLabel controlId="mapFilters" label="Filter Map">
+              <Form.Select onChange={setMapFilters}>
+                <option value="" key="BLANK"></option>
+                {Object.entries(house.regions).map(
+                  ([key, region]: [string, Region]) => (
+                    <option value={key} key={key}>
+                      {region.name}
+                    </option>
+                  )
+                )}
+              </Form.Select>
+            </FloatingLabel>
+            </Col>
+          </Row>
           
           <div>
             Emergency Warp Players to:
@@ -270,6 +407,8 @@ function App() {
             mode={playerMode}
             setMode={setPlayerMode}
             imageRef={playerImageRef}
+            visit={visit}
+            visited={visitedNodes[playerRoom]}
           ></RoomPreview>
         </Col>
       </Row>
